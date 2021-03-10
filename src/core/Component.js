@@ -1,4 +1,4 @@
-export default class Componenet{
+export default class Component{
     $target;
     $state;
     constructor($target){
@@ -11,6 +11,11 @@ export default class Componenet{
     template(){return ''};
     render(){
         this.$target.innerHTML = this.template();
+        this.setEvent();
+    }
+    setEvent() {}
+    setState(newState){
+        this.$state = {...this.$state, ...newState };
         this.render();
     }
 }
